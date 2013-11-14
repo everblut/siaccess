@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @interface BLUTViewController : UIViewController
+
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) IBOutlet UITextField *matriculaInput;
+@property (strong, nonatomic) IBOutlet UITextField *passwordInput;
+@property (weak, nonatomic) NSDictionary * carreras;
+@property (strong, nonatomic) User *user;
+
+
+- (IBAction)btnEnter:(id)sender;
 
 @end
