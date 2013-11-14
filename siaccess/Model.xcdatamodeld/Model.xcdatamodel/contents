@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="11G63" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Carrera" representedClassName="Carrera" syncable="YES">
+        <attribute name="chx" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="matricula" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Materia" representedClassName="Materia" syncable="YES">
+        <attribute name="carrera" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="clave" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cuarta" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="laboratorio" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="matricula" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="posicion" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="primera" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quinta" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="segunda" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="semestre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sexta" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tercera" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="matricula" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Carrera" positionX="-92" positionY="198" width="128" height="90"/>
+        <element name="Materia" positionX="-279" positionY="342" width="128" height="240"/>
+        <element name="User" positionX="160" positionY="192" width="128" height="75"/>
+    </elements>
+</model>
