@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A52A8C051836408600E405E2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52A8C041836408600E405E2 /* QuartzCore.framework */; };
 		A56E35BD182A38FE008B4DC7 /* BLUTAccionesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A56E35BC182A38FE008B4DC7 /* BLUTAccionesViewController.m */; };
 		A56E35C3182A49E2008B4DC7 /* BLUTNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A56E35C2182A49E2008B4DC7 /* BLUTNavigationViewController.m */; };
+		A570A87A183A05BD006FC765 /* Concepto.m in Sources */ = {isa = PBXBuildFile; fileRef = A570A879183A05BD006FC765 /* Concepto.m */; };
+		A570A87D183A05CD006FC765 /* Rectoria.m in Sources */ = {isa = PBXBuildFile; fileRef = A570A87C183A05CD006FC765 /* Rectoria.m */; };
+		A57F7726183BF2BB00E2B552 /* Interno.m in Sources */ = {isa = PBXBuildFile; fileRef = A57F7725183BF2BB00E2B552 /* Interno.m */; };
+		A57F772A183BF3EA00E2B552 /* BLUTPagoInternoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57F7729183BF3EA00E2B552 /* BLUTPagoInternoViewController.m */; };
 		A581E3A3181FAFF9003ABBF0 /* BLUTCarrerasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A581E3A2181FAFF9003ABBF0 /* BLUTCarrerasViewController.m */; };
 		A582FB6B181470A300E4A25E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A582FB6A181470A300E4A25E /* UIKit.framework */; };
 		A582FB6D181470A300E4A25E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A582FB6C181470A300E4A25E /* Foundation.framework */; };
@@ -46,10 +51,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A52A8C041836408600E405E2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A56E35BB182A38FE008B4DC7 /* BLUTAccionesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLUTAccionesViewController.h; sourceTree = "<group>"; };
 		A56E35BC182A38FE008B4DC7 /* BLUTAccionesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLUTAccionesViewController.m; sourceTree = "<group>"; };
 		A56E35C1182A49E1008B4DC7 /* BLUTNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLUTNavigationViewController.h; sourceTree = "<group>"; };
 		A56E35C2182A49E2008B4DC7 /* BLUTNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLUTNavigationViewController.m; sourceTree = "<group>"; };
+		A570A878183A05BD006FC765 /* Concepto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Concepto.h; sourceTree = "<group>"; };
+		A570A879183A05BD006FC765 /* Concepto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Concepto.m; sourceTree = "<group>"; };
+		A570A87B183A05CD006FC765 /* Rectoria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rectoria.h; sourceTree = "<group>"; };
+		A570A87C183A05CD006FC765 /* Rectoria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rectoria.m; sourceTree = "<group>"; };
+		A57F7724183BF2BB00E2B552 /* Interno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interno.h; sourceTree = "<group>"; };
+		A57F7725183BF2BB00E2B552 /* Interno.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Interno.m; sourceTree = "<group>"; };
+		A57F7728183BF3EA00E2B552 /* BLUTPagoInternoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLUTPagoInternoViewController.h; sourceTree = "<group>"; };
+		A57F7729183BF3EA00E2B552 /* BLUTPagoInternoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLUTPagoInternoViewController.m; sourceTree = "<group>"; };
 		A581E3A1181FAFF9003ABBF0 /* BLUTCarrerasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLUTCarrerasViewController.h; sourceTree = "<group>"; };
 		A581E3A2181FAFF9003ABBF0 /* BLUTCarrerasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLUTCarrerasViewController.m; sourceTree = "<group>"; };
 		A582FB67181470A300E4A25E /* siaccess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = siaccess.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A52A8C051836408600E405E2 /* QuartzCore.framework in Frameworks */,
 				A582FBB71814D7CE00E4A25E /* CoreData.framework in Frameworks */,
 				A582FB6B181470A300E4A25E /* UIKit.framework in Frameworks */,
 				A582FB6D181470A300E4A25E /* Foundation.framework in Frameworks */,
@@ -128,6 +143,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A570A8771839CAE8006FC765 /* pago rectoria */ = {
+			isa = PBXGroup;
+			children = (
+				A5CE9C931830CEE400B9908C /* BLUTPagoRectoriaViewController.h */,
+				A5CE9C941830CEE400B9908C /* BLUTPagoRectoriaViewController.m */,
+			);
+			name = "pago rectoria";
+			sourceTree = "<group>";
+		};
+		A57F7727183BF3C700E2B552 /* pago interno */ = {
+			isa = PBXGroup;
+			children = (
+				A57F7728183BF3EA00E2B552 /* BLUTPagoInternoViewController.h */,
+				A57F7729183BF3EA00E2B552 /* BLUTPagoInternoViewController.m */,
+			);
+			name = "pago interno";
+			sourceTree = "<group>";
+		};
 		A582FB5E181470A300E4A25E = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +181,7 @@
 		A582FB69181470A300E4A25E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A52A8C041836408600E405E2 /* QuartzCore.framework */,
 				A582FBB61814D7CE00E4A25E /* CoreData.framework */,
 				A582FB6A181470A300E4A25E /* UIKit.framework */,
 				A582FB6C181470A300E4A25E /* Foundation.framework */,
@@ -229,6 +263,12 @@
 				A5D34A8118176CD400CDCB15 /* CoreDataHelper.m */,
 				A582FBBD1816695F00E4A25E /* User.m */,
 				A582FBB9181668AE00E4A25E /* Model.xcdatamodeld */,
+				A57F7724183BF2BB00E2B552 /* Interno.h */,
+				A57F7725183BF2BB00E2B552 /* Interno.m */,
+				A570A87B183A05CD006FC765 /* Rectoria.h */,
+				A570A87C183A05CD006FC765 /* Rectoria.m */,
+				A570A878183A05BD006FC765 /* Concepto.h */,
+				A570A879183A05BD006FC765 /* Concepto.m */,
 				A5CA1B07182CE152000381CA /* Materia.h */,
 				A5CA1B08182CE152000381CA /* Materia.m */,
 				A5F175181820F92E006D80F0 /* Carrera.h */,
@@ -250,9 +290,9 @@
 		A5CA1B03182CDF9C000381CA /* Acciones */ = {
 			isa = PBXGroup;
 			children = (
+				A57F7727183BF3C700E2B552 /* pago interno */,
+				A570A8771839CAE8006FC765 /* pago rectoria */,
 				A5CE9C961830EB1C00B9908C /* kardex */,
-				A5CE9C931830CEE400B9908C /* BLUTPagoRectoriaViewController.h */,
-				A5CE9C941830CEE400B9908C /* BLUTPagoRectoriaViewController.m */,
 			);
 			name = Acciones;
 			sourceTree = "<group>";
@@ -389,6 +429,10 @@
 				A5CA1B0C182CE4B1000381CA /* BLUTActionHelper.m in Sources */,
 				A5CE9C951830CEE400B9908C /* BLUTPagoRectoriaViewController.m in Sources */,
 				A5CE9C991830EB3900B9908C /* BLUTMateriaViewController.m in Sources */,
+				A570A87A183A05BD006FC765 /* Concepto.m in Sources */,
+				A570A87D183A05CD006FC765 /* Rectoria.m in Sources */,
+				A57F7726183BF2BB00E2B552 /* Interno.m in Sources */,
+				A57F772A183BF3EA00E2B552 /* BLUTPagoInternoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

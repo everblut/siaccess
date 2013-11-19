@@ -17,6 +17,8 @@
 @synthesize materia;
 @synthesize op;
 @synthesize names;
+NSString *blank = @" ";
+NSString *noCalif = @"Sin calificación";
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -74,7 +76,6 @@
             return 2;
             break;
         case 1:
-            NSLog(@"OP count: %d",[op count]);
             return [op count];
             break;
         case 2:
@@ -112,7 +113,7 @@
             break;
         case 2:
             [cell.textLabel setText:@"Laboratorio"];
-            NSString *l = [materia.laboratorio isEqualToString:@" "] ? @"Sin calificacion": materia.laboratorio ;
+            NSString *l = [materia.laboratorio isEqualToString:@" "] ? noCalif : materia.laboratorio ;
             [cell.detailTextLabel setText:l];
             break;
     }
@@ -129,26 +130,26 @@
 - (void)oportunidad{
     op = [[NSMutableArray alloc] init];
     names = [[NSMutableArray alloc] init];
-    NSString *cal = [materia.primera isEqualToString:@" "] ? @"Sin calificación" : materia.primera;
+    NSString *cal = [materia.primera isEqualToString:@" "] ? noCalif : materia.primera;
     [names addObject:@"Primera"];
     [op addObject:cal];
-    if(![materia.segunda isEqualToString:@" "]){
+    if(![materia.segunda isEqualToString:blank]){
         [names addObject:@"Segunda"];
         [op addObject:materia.segunda];
     }
-    if(![materia.tercera isEqualToString:@" "]){
+    if(![materia.tercera isEqualToString:blank]){
         [names addObject:@"Tercera"];
         [op addObject:materia.tercera];
     }
-    if(![materia.cuarta isEqualToString:@" "]){
+    if(![materia.cuarta isEqualToString:blank]){
         [names addObject:@"Cuarta"];
         [op addObject:materia.cuarta];
     }
-    if(![materia.quinta isEqualToString:@" "]){
+    if(![materia.quinta isEqualToString:blank]){
         [names addObject:@"Quinta"];
         [op addObject:materia.quinta];
     }
-    if(![materia.sexta isEqualToString:@" "]){
+    if(![materia.sexta isEqualToString:blank]){
         [names addObject:@"Sexta"];
         [op addObject:materia.sexta];
     }

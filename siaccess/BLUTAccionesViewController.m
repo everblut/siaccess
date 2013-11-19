@@ -9,6 +9,7 @@
 #import "BLUTAccionesViewController.h"
 #import "BLUTKardexViewController.h"
 #import "BLUTPagoRectoriaViewController.h"
+#import "BLUTPagoInternoViewController.h"
 
 @interface BLUTAccionesViewController ()
 
@@ -51,11 +52,15 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([[segue identifier] isEqualToString:@"accionKardex"]){
         BLUTKardexViewController * kv =[segue destinationViewController];
-        kv.index = choice;
+        [kv setIndex:choice];
     }
     if([[segue identifier] isEqualToString:@"accionPagoRectoria"]){
         BLUTPagoRectoriaViewController * prv = [segue destinationViewController];
-        prv.index = choice;
+        [prv setIndx:choice];
+    }
+    if([[segue identifier] isEqualToString:@"accionPagoInterno"]){
+        BLUTPagoInternoViewController *piv = [segue destinationViewController];
+        [piv setIndex:choice];
     }
 }
 

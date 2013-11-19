@@ -5,6 +5,24 @@
         <attribute name="matricula" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Concepto" representedClassName="Concepto" syncable="YES">
+        <attribute name="costo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identificador" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toBoleta" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Rectoria" inverseName="toConcept" inverseEntity="Rectoria" syncable="YES"/>
+        <relationship name="toBoletaInterna" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Interno" inverseName="toConcept" inverseEntity="Interno" syncable="YES"/>
+    </entity>
+    <entity name="Interno" representedClassName="Interno" syncable="YES">
+        <attribute name="banco" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carrera" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fechaInscripcion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="limiteAdeudos" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="matricula" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="periodo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="referencia" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vencimiento" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toConcept" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Concepto" inverseName="toBoletaInterna" inverseEntity="Concepto" syncable="YES"/>
+    </entity>
     <entity name="Materia" representedClassName="Materia" syncable="YES">
         <attribute name="carrera" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="clave" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,13 +38,25 @@
         <attribute name="sexta" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tercera" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Rectoria" representedClassName="Rectoria" syncable="YES">
+        <attribute name="banco" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carrera" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="matricula" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="periodo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="referencia" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vencimiento" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toConcept" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Concepto" inverseName="toBoleta" inverseEntity="Concepto" syncable="YES"/>
+    </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="matricula" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Carrera" positionX="-92" positionY="198" width="128" height="90"/>
+        <element name="Concepto" positionX="160" positionY="192" width="128" height="120"/>
         <element name="Materia" positionX="-279" positionY="342" width="128" height="240"/>
+        <element name="Rectoria" positionX="160" positionY="192" width="128" height="150"/>
         <element name="User" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="Interno" positionX="160" positionY="192" width="128" height="180"/>
     </elements>
 </model>

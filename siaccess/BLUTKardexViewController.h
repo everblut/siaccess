@@ -13,5 +13,4 @@
 @property (nonatomic,strong) NSManagedObjectContext * managedObjectContext;
 @property (nonatomic, assign) NSInteger index;
 @property (nonatomic, strong) NSArray * materias;
-@property (nonatomic, assign) NSInteger currentExpandedIndex;
 @end

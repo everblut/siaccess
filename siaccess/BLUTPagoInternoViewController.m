@@ -1,39 +1,37 @@
 //
-//  BLUTPagoRectoriaViewController.m
+//  BLUTPagoInternoViewController.m
 //  siaccess
 //
-//  Created by Everardo Medina Palomo on 11/11/13.
+//  Created by Everardo Medina Palomo on 19/11/13.
 //  Copyright (c) 2013 Everardo Medina Palomo. All rights reserved.
 //
 
-#import "BLUTPagoRectoriaViewController.h"
+#import "BLUTPagoInternoViewController.h"
 #import "BLUTAppDelegate.h"
 #import "BLUTActionHelper.h"
-#import "CoreDataHelper.h"
-#import "Rectoria.h"
 #import "Concepto.h"
+#import "Interno.h"
+#import "CoreDataHelper.h"
 
-@interface BLUTPagoRectoriaViewController ()
+@interface BLUTPagoInternoViewController ()
 
 @end
 
-@implementation BLUTPagoRectoriaViewController
+@implementation BLUTPagoInternoViewController
 @synthesize managedObjectContext;
-@synthesize indx;
+@synthesize index;
 @synthesize boleta;
 @synthesize detalles;
 @synthesize empty;
 
 
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setTitle:@"Pago Rectoria"];
+    [self setTitle:@"Pago Interno"];
     BLUTAppDelegate *delegate = [UIApplication sharedApplication].delegate;
     self.managedObjectContext = delegate.managedObjectContext;
-    boleta = (Rectoria *) [self getBoleta];
+    boleta = (Interno *) [self getBoleta];
     detalles = [NSArray arrayWithArray:[[boleta valueForKey:@"toConcept"] allObjects]];
     empty = [detalles count] > 0 ? NO : YES;
     if(!empty) detalles = [self moveDetalles];
@@ -56,9 +54,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     if (empty) return 1;
-    return 3;
+    return 4;
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
@@ -71,7 +73,11 @@
             return @"Periodo y vencimiento";
             break;
         case 2:
+            return @"Fecha de adeudo e inscripción";
+            break;
+        case 3:
             return @"Detalle";
+            break;
         default:
             return 0;
             break;
@@ -88,6 +94,9 @@
             return 2;
             break;
         case 2:
+            return 2;
+            break;
+        case 3:
             return [detalles count];
         default:
             return 0;
@@ -140,6 +149,21 @@
             
             break;
         case 2:
+            switch (indexPath.row) {
+                case 0:
+                    [cell.detailTextLabel setText:@"Fecha limite para adeudos"];
+                    [cell.textLabel setFont:[UIFont boldSystemFontOfSize:13]];
+                    [cell.textLabel setText:[[boleta limiteAdeudos] lowercaseString]];
+                    break;
+                case 1:
+                    [cell.detailTextLabel setText:@"Fecha de inscripción"];
+                    [cell.textLabel setFont:[UIFont systemFontOfSize:14]];
+                    [cell.textLabel setText:[[boleta fechaInscripcion] lowercaseString]];
+                default:
+                    break;
+            }
+            break;
+        case 3:
             [cell.textLabel setText:[[detalles objectAtIndex:indexPath.row] nombre]];
             [cell.detailTextLabel setText:[[detalles objectAtIndex:indexPath.row] costo]];
             if(indexPath.row == [detalles count]-1){
@@ -148,19 +172,20 @@
             }
             break;
     }
+
+    
     return cell;
 }
-
 - (NSArray *) getBoleta{
     NSString *mat = [[NSUserDefaults standardUserDefaults] objectForKey:@"mat"];
-    NSString *idx = [NSString stringWithFormat:@"%d",indx];
+    NSString *idx = [NSString stringWithFormat:@"%d",index];
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"(matricula =%@ AND carrera = %@)", mat, idx];
-    if ([CoreDataHelper countForEntity:@"Rectoria" withPredicate:pred andContext:[self managedObjectContext]] > 0){
+    if ([CoreDataHelper countForEntity:@"Interno" withPredicate:pred andContext:[self managedObjectContext]] > 0){
         return [self getDetails:pred];
     }else{
         //guardalos
         NSString *pass = [[NSUserDefaults standardUserDefaults] objectForKey:@"pass"];
-        NSDictionary *d = [BLUTActionHelper getBoletaRectoria:mat password:pass choice:indx];
+        NSDictionary *d = [BLUTActionHelper getBoletaRectoria:mat password:pass choice:index];
         if ([d objectForKey:@"0"] == NULL) return nil;
         if([self saveBoleta:d] == YES){
             return [self getDetails:pred];
@@ -169,18 +194,23 @@
             return nil;
         }
     }
+    
 }
+
 - (BOOL) saveBoleta:(NSDictionary *)datos{
-    Rectoria *r = (Rectoria *) [NSEntityDescription insertNewObjectForEntityForName:@"Rectoria" inManagedObjectContext:[self managedObjectContext]];
+    NSLog(@"%@",datos);
+    Interno *r = (Interno *) [NSEntityDescription insertNewObjectForEntityForName:@"Interno" inManagedObjectContext:[self managedObjectContext]];
     Concepto *c;
     NSError *err;
     [r setBanco:   [datos objectForKey:[NSString stringWithFormat:@"%d",0]]];
     [r setReferencia: [[datos objectForKey:[NSString stringWithFormat:@"%d",1]] lowercaseString]];
     [r setVencimiento: [datos objectForKey:[NSString stringWithFormat:@"%d",2]]];
     [r setPeriodo: [datos objectForKey:[NSString stringWithFormat:@"%d",3]]];
-    [r setCarrera: [NSString stringWithFormat:@"%d",indx]];
+    [r setCarrera: [NSString stringWithFormat:@"%d",index]];
     [r setMatricula: [[NSUserDefaults standardUserDefaults] objectForKey:@"mat"]];
-    NSDictionary *det = [datos objectForKey:[NSString stringWithFormat:@"%d",4]];
+    [r setLimiteAdeudos: [datos objectForKey:[NSString stringWithFormat:@"%d",4]]];
+    [r setFechaInscripcion: [datos objectForKey:[NSString stringWithFormat:@"%d",5]]];
+    NSDictionary *det = [datos objectForKey:[NSString stringWithFormat:@"%d",6]];
     for(NSString *key in [det allKeys]){
         c = (Concepto *) [NSEntityDescription insertNewObjectForEntityForName:@"Concepto" inManagedObjectContext:[self managedObjectContext]];
         [c setIdentificador:  [[det objectForKey:key] objectForKey:[NSString stringWithFormat:@"%d",0]]];
@@ -200,9 +230,10 @@
     return YES;
 }
 - (NSArray *) getDetails:(NSPredicate *)pred{
-    return [[NSArray arrayWithArray:[CoreDataHelper searchObjectsForEntity:@"Rectoria" withPredicate:pred andSortKey:nil andSortAscending:NO andContext:[self managedObjectContext]]] objectAtIndex:0];
+    return [[NSArray arrayWithArray:[CoreDataHelper searchObjectsForEntity:@"Interno" withPredicate:pred andSortKey:nil andSortAscending:NO andContext:[self managedObjectContext]]] objectAtIndex:0];
 }
 - (BOOL) deleteAllDetalles{
-    return [CoreDataHelper deleteAllObjectsForEntity:@"Rectoria" andContext:[self managedObjectContext]];
+    return [CoreDataHelper deleteAllObjectsForEntity:@"Interno" andContext:[self managedObjectContext]];
 }
+
 @end

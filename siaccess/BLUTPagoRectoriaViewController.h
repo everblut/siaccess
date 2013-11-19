@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Rectoria.h"
 
-@interface BLUTPagoRectoriaViewController : UITableViewController
+@interface BLUTPagoRectoriaViewController : UITableViewController <UITableViewDataSource>
 
 @property (nonatomic,strong) NSManagedObjectContext * managedObjectContext;
-@property (nonatomic, assign) NSInteger index;
-@property (nonatomic, strong) NSDictionary * kardex;
+@property (nonatomic, assign) NSInteger indx;
+@property (nonatomic, strong) Rectoria * boleta;
+@property (nonatomic, strong) NSArray * detalles;
+@property (nonatomic, assign) BOOL empty;
 
 @end

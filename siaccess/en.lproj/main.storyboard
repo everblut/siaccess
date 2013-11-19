@@ -99,7 +99,7 @@
             </objects>
             <point key="canvasLocation" x="-414" y="-105"/>
         </scene>
-        <!--Carreras View Controller-->
+        <!--Carreras View Controller - Carreras-->
         <scene sceneID="Cai-bT-DHD">
             <objects>
                 <tableViewController storyboardIdentifier="carrerasView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jx0-UW-jZ6" customClass="BLUTCarrerasViewController" sceneMemberID="viewController">
@@ -135,7 +135,7 @@
                             <outlet property="delegate" destination="Jx0-UW-jZ6" id="C9h-OJ-Vbs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="nNs-A8-vKa"/>
+                    <navigationItem key="navigationItem" title="Carreras" id="nNs-A8-vKa"/>
                     <connections>
                         <outlet property="tableView" destination="G2q-Vy-lVg" id="Pd3-SG-nN8"/>
                         <segue destination="DxB-VW-lA0" kind="push" identifier="verAcciones" id="UOI-e0-4hR"/>
@@ -144,6 +144,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIm-tt-tEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="133" y="470"/>
+        </scene>
+        <!--Pago Interno View Controller - Pago Interno-->
+        <scene sceneID="cbT-jP-XF0">
+            <objects>
+                <tableViewController id="4Gh-xj-nIN" customClass="BLUTPagoInternoViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Usk-JK-fC1">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsCell" textLabel="T1d-VM-RHJ" detailTextLabel="3LQ-Mq-bk6" style="IBUITableViewCellStyleValue1" id="H0p-aL-xw1">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1d-VM-RHJ">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LQ-Mq-bk6">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4Gh-xj-nIN" id="pAb-Z7-WrV"/>
+                            <outlet property="delegate" destination="4Gh-xj-nIN" id="KUg-XM-weG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Pago Interno" id="IG8-IQ-onn"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gee-jr-4TT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1476" y="1081"/>
         </scene>
         <!--Kardex View Controller - Kardex-->
         <scene sceneID="RLn-VE-KNu">
@@ -291,7 +333,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Pago facultad" id="83D-nt-t32">
+                            <tableViewSection headerTitle="Pago Interno" id="83D-nt-t32">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Acciones" textLabel="v1P-s9-HFM" style="IBUITableViewCellStyleDefault" id="T5K-Lg-AS8">
                                         <rect key="frame" x="0.0" y="154" width="320" height="44"/>
@@ -300,7 +342,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Ver pago facultad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v1P-s9-HFM">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Ver pago interno" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v1P-s9-HFM">
                                                     <rect key="frame" x="10" y="0.0" width="267" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -310,6 +352,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="4Gh-xj-nIN" kind="push" identifier="accionPagoInterno" id="4zK-Jl-GZp"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -349,16 +394,16 @@
             </objects>
             <point key="canvasLocation" x="697" y="470"/>
         </scene>
-        <!--Table View Controller - Pago Rectoria-->
+        <!--Pago Rectoria View Controller - Pago Rectoria-->
         <scene sceneID="Kat-Np-2jg">
             <objects>
-                <tableViewController title="Pago Rectoria" id="dx3-QC-hp2" sceneMemberID="viewController">
+                <tableViewController title="Pago Rectoria" id="dx3-QC-hp2" customClass="BLUTPagoRectoriaViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="jCe-kL-5Q1">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsCell" textLabel="gl9-ym-9Ay" style="IBUITableViewCellStyleDefault" id="pmH-Jt-RIf">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsCell" textLabel="gl9-ym-9Ay" detailTextLabel="Hqg-Vl-l7t" style="IBUITableViewCellStyleValue1" id="pmH-Jt-RIf">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -366,8 +411,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gl9-ym-9Ay">
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hqg-Vl-l7t">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                     </subviews>
@@ -386,40 +436,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7g4-fb-iaR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1099" y="0.0"/>
+            <point key="canvasLocation" x="1476" y="-146"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="BLUTAccionesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLUTAccionesViewController.h"/>
-        </class>
-        <class className="BLUTCarrerasViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLUTCarrerasViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="BLUTKardexViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLUTKardexViewController.h"/>
-        </class>
-        <class className="BLUTMateriaViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLUTMateriaViewController.h"/>
-        </class>
-        <class className="BLUTNavigationViewController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLUTNavigationViewController.h"/>
-        </class>
-        <class className="BLUTViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLUTViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnEnter:"/>
-                <relationship kind="outlet" name="matriculaInput" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordInput" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
