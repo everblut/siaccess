@@ -21,7 +21,7 @@
         <attribute name="periodo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="referencia" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="vencimiento" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="toConcept" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Concepto" inverseName="toBoletaInterna" inverseEntity="Concepto" syncable="YES"/>
+        <relationship name="toConcept" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Concepto" inverseName="toBoletaInterna" inverseEntity="Concepto" syncable="YES"/>
     </entity>
     <entity name="Materia" representedClassName="Materia" syncable="YES">
         <attribute name="carrera" optional="YES" attributeType="String" syncable="YES"/>
@@ -53,10 +53,10 @@
     </entity>
     <elements>
         <element name="Carrera" positionX="-92" positionY="198" width="128" height="90"/>
-        <element name="Concepto" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="Concepto" positionX="180" positionY="195" width="128" height="120"/>
+        <element name="Interno" positionX="331" positionY="414" width="128" height="180"/>
         <element name="Materia" positionX="-279" positionY="342" width="128" height="240"/>
-        <element name="Rectoria" positionX="160" positionY="192" width="128" height="150"/>
-        <element name="User" positionX="160" positionY="192" width="128" height="75"/>
-        <element name="Interno" positionX="160" positionY="192" width="128" height="180"/>
+        <element name="Rectoria" positionX="27" positionY="444" width="128" height="150"/>
+        <element name="User" positionX="-101" positionY="351" width="128" height="75"/>
     </elements>
 </model>

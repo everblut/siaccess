@@ -127,6 +127,7 @@
                 case 2:
                     [cell.detailTextLabel setText:@"Referencia"];
                     [cell.textLabel setText:[boleta referencia]];
+                    break;
                 default:
                     break;
             }
@@ -151,20 +152,22 @@
         case 2:
             switch (indexPath.row) {
                 case 0:
-                    [cell.detailTextLabel setText:@"Fecha limite para adeudos"];
+                    [cell.detailTextLabel setText:@"Limite para adeudos"];
                     [cell.textLabel setFont:[UIFont boldSystemFontOfSize:13]];
                     [cell.textLabel setText:[[boleta limiteAdeudos] lowercaseString]];
                     break;
                 case 1:
-                    [cell.detailTextLabel setText:@"Fecha de inscripción"];
+                    [cell.detailTextLabel setText:@"Inscripción"];
                     [cell.textLabel setFont:[UIFont systemFontOfSize:14]];
                     [cell.textLabel setText:[[boleta fechaInscripcion] lowercaseString]];
+                    break;
                 default:
                     break;
             }
             break;
         case 3:
             [cell.textLabel setText:[[detalles objectAtIndex:indexPath.row] nombre]];
+            [cell.textLabel setLineBreakMode:NSLineBreakByTruncatingTail];
             [cell.detailTextLabel setText:[[detalles objectAtIndex:indexPath.row] costo]];
             if(indexPath.row == [detalles count]-1){
                 [cell.detailTextLabel setFont:[UIFont boldSystemFontOfSize:18]];
@@ -185,7 +188,7 @@
     }else{
         //guardalos
         NSString *pass = [[NSUserDefaults standardUserDefaults] objectForKey:@"pass"];
-        NSDictionary *d = [BLUTActionHelper getBoletaRectoria:mat password:pass choice:index];
+        NSDictionary *d = [BLUTActionHelper getBoletaInterna:mat password:pass choice:index];
         if ([d objectForKey:@"0"] == NULL) return nil;
         if([self saveBoleta:d] == YES){
             return [self getDetails:pred];

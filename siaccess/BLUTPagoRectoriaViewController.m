@@ -108,16 +108,16 @@
         case 0:
             switch (indexPath.row) {
                 case 0:
-                    [cell.detailTextLabel setText:@"Banco"];
-                    [cell.textLabel setText:@"BANORTE"];
+                    [cell.textLabel setText:@"Banco"];
+                    [cell.detailTextLabel setText:@"BANORTE"];
                     break;
                 case 1:
-                    [cell.detailTextLabel setText:@"No. de Empresa"];
-                    [cell.textLabel setText:[boleta banco]];
+                    [cell.textLabel setText:@"No. de Empresa"];
+                    [cell.detailTextLabel setText:[boleta banco]];
                     break;
                 case 2:
-                    [cell.detailTextLabel setText:@"Referencia"];
-                    [cell.textLabel setText:[boleta referencia]];
+                    [cell.textLabel setText:@"Referencia"];
+                    [cell.detailTextLabel setText:[boleta referencia]];
                 default:
                     break;
             }

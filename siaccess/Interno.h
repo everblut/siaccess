@@ -21,6 +21,6 @@
 @property (nonatomic, retain) NSString * carrera;
 @property (nonatomic, retain) NSString * matricula;
 @property (nonatomic, retain) NSString * limiteAdeudos;
-@property (nonatomic, retain) Concepto *toConcept;
+@property (nonatomic, retain) NSSet *toConcept;
 
 @end

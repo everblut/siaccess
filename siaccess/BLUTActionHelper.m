@@ -10,11 +10,17 @@
 #import "SBJson.h"
 
 @implementation BLUTActionHelper
-
+/*** testing
 NSString *kardexURL =       @"http://localhost/cgi-bin/sc/getKardex.py";
 NSString *carrerasURL =     @"http://localhost/cgi-bin/sc/getCarrera.py";
 NSString *pagoRectoriaURL = @"http://localhost/cgi-bin/sc/getPagoRectoria.py";
 NSString *pagoInternoURL =  @"http://localhost/cgi-bin/sc/getPagoInterno.py";
+***/
+/* produccion*/
+NSString *kardexURL =       @"http://api.siaccess.alwaysdata.net/cgi-bin/getKardex.py";
+NSString *carrerasURL =     @"http://api.siaccess.alwaysdata.net/cgi-bin/getCarrera.py";
+NSString *pagoRectoriaURL = @"http://api.siaccess.alwaysdata.net/cgi-bin/getPagoRectoria.py";
+NSString *pagoInternoURL =  @"http://api.siaccess.alwaysdata.net/cgi-bin/getPagoInterno.py";
 
 + (NSDictionary *) getKardex:(NSString *)matricula password:(NSString *)password choice:(int)choice{
     
@@ -48,7 +54,7 @@ NSString *pagoInternoURL =  @"http://localhost/cgi-bin/sc/getPagoInterno.py";
     NSString *post = [[NSString alloc] initWithFormat:@"user=%@&pass=%@&chx=%d",matricula,password,choice];
     NSDictionary *jsonData = [self serverRequest:post withURL:pagoInternoURL];
     if ([jsonData objectForKey:@"0"] != NULL){
-        NSLog(@"Boleta rectoria SUCCESS!");
+        NSLog(@"Boleta interna SUCCESS!");
         return jsonData;
     }else{
         NSLog(@"boleta rectoria FAIL!");
@@ -88,7 +94,6 @@ NSString *pagoInternoURL =  @"http://localhost/cgi-bin/sc/getPagoInterno.py";
                                                 returningResponse:&response error:&err];
         if( [response statusCode] >= 200 && [response statusCode] < 300){
             NSString *responseData = [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
-            NSLog(responseData);
             return (NSDictionary *) [[SBJsonParser new] objectWithString:responseData error:nil];
         }else{
             NSLog(@"Err %@ Response code %d",[err domain],[response statusCode]);

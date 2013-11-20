@@ -12,6 +12,7 @@
 
 + (NSDictionary *) getKardex:(NSString *)matricula password:(NSString *)password choice:(int)choice;
 + (NSDictionary *) getBoletaRectoria:(NSString *)matricula password:(NSString *)password choice:(int)choice;
++ (NSDictionary *) getBoletaInterna:(NSString *)matricula password:(NSString *)password choice:(int)choice;
 + (NSDictionary *) getCarreras:(NSString *)matricula password:(NSString *)password;
 
 @end
